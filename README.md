@@ -2,6 +2,8 @@
 
 A RESTful API for a job board platform built with Laravel.
 
+Postman doc: https://documenter.getpostman.com/view/15626596/2sB2qZE2bN
+
 ## Features
 
 - Separate authentication for companies and candidates
