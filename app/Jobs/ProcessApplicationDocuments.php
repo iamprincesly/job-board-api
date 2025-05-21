@@ -25,6 +25,5 @@ class ProcessApplicationDocuments implements ShouldQueue
     public function handle(): void
     {
         Log::info("Processing documents for application ID: {$this->application->id}");
-        Storage::move($this->path, 'processed/' . basename($this->path));
     }
 }
