@@ -30,12 +30,17 @@ class RefreshApp extends Command
         $this->info('Running migration...');
         $this->call('migrate:fresh', ['--seed' => true]);
 
-        // $this->info('Creating passport client personal key...');
-        // $this->call('passport:client', ['--personal' => true, '--name' => 'Personal Access Client', '--client' => 0]);
+        $this->info('Creating passport client personal key...');
+        $this->call('passport:client', ['--personal' => true, '--name' => 'Candidate Personal Access Client', '--provider' => 'candidates']);
+        $this->call('passport:client', ['--personal' => true, '--name' => 'Company Personal Access Client', '--provider' => 'companies']);
 
         $this->info('Generate passport key...');
         $this->call('passport:key', ['--force' => true]);
 
+        $this->info('Clearing logs and caching...');
+        $this->call('logs:clear');
+        $this->call('optimize');
+        
         $this->info('App refresh successfully.');
 
         return Command::SUCCESS;

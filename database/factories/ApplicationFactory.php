@@ -22,6 +22,7 @@ class ApplicationFactory extends Factory
             'company_job_id' => Job::inRandomOrder()->first(),
             'candidate_id' => Candidate::inRandomOrder()->first(),
             'cover_letter' => $this->faker->sentence(),
+            'cover_letter_file' => $this->faker->url(),
             'resume_path' => $this->faker->url()
         ];
     }

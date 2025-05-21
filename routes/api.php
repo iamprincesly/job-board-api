@@ -12,6 +12,6 @@ Route::name('api.')->group(function () {
 
     Route::prefix('jobs')->name('jobs.')->controller(PublicJobController::class)->group(function () {
         Route::get('/', 'listJobs')->name('job-list');
-        Route::post('{job}/apply', 'applyForJob')->middleware('auth:candidate-api')->name('job-list');
+        Route::post('{job}/apply', 'applyForJob')->middleware('auth:candidate-api')->name('job-apply');
     });
 });

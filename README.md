@@ -36,30 +36,17 @@ cp .env.example .env
 php artisan key:generate
 ```
 
-5. Run migrations and seeders
+5. Run app refresh
 ```
-php artisan migrate --seed
+php artisan app:refresh
 ```
 
-6. Create passport client for Candidate
-``` 
-php artisan passport:client --personal --name="Candidate Personal Access Client"
-``` 
-then select 0
-
-7. Create passport client for Company
-``` 
-php artisan passport:client --personal --name="Company Personal Access Client"
-``` 
-then select 1
-
-
-8. Run queue worker
+6. Run queue worker
 ```
 php artisan queue:work
 ```
 
-9. Run the server
+7. Run the server
 ``` 
 php artisan serve
 ```
